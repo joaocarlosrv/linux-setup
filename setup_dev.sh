@@ -8,15 +8,15 @@ echo "Iniciando a configuração do ambiente..."
 # 1. Atualizar repositórios
 sudo apt update
 
-# 2. Instalar Git e ferramentas de rede (Melhor via APT)
+# 2. Instalar Git e ferramentas de rede 
 echo "Instalando Git e ferramentas essenciais..."
 sudo apt install -y git curl build-essential libssl-dev
 
-# 3. Instalar VS Code (Melhor via Flatpak no Zorin)
+# 3. Instalar VS Code 
 echo "Instalando VS Code via Flatpak..."
 flatpak install flathub com.visualstudio.code -y
 
-# 4. Instalar Node.js via NVM (Melhor para evitar conflitos de permissão)
+# 4. Instalar Node.js via NVM
 # Isso permite gerenciar versões do Node sem usar 'sudo' no npm
 echo "Instalando NVM (Node Version Manager)..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -28,12 +28,12 @@ export NVM_DIR="$HOME/.nvm"
 echo "Installing Node.js LTS..."
 nvm install --lts
 
-# 5. Configurar React e React Native (CLI global)
+# 5. Configurar React e React Native 
 echo "Configurando ambiente React e React Native..."
 npm install -g tree-kill # Util para alguns processos de build
 npm install -g expo-cli  # Recomendado para desenvolvimento mobile moderno
 
-# 6. GitHub CLI (Melhor via repositório oficial para integração total)
+# 6. GitHub CLI 
 echo "Instalando GitHub CLI..."
 if ! command -v gh &> /dev/null; then
     type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
